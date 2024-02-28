@@ -15,9 +15,9 @@ fastify.register(fastifyCors, {
 const startServer = async () => {
   try {
 
-    await fastify.listen({
-      port: process.env.PORT || 5000,
-    });
+    await fastify.listen(
+     process.env.PORT || 5000,
+      '0.0.0.0');
     fastify.log.info(`Server is running on port ${fastify.server.address().port}`);
   } catch (err) {
     console.log(err);
